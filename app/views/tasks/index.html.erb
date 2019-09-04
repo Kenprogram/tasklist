@@ -3,13 +3,10 @@
 <h1> <%= current_user.name %> のタスク一覧</h1>
 
 <% if @tasks.any? %>
-  <h3>未完了のタスク</h3>
+  <h3>タスク</h3>
   <%= render 'tasks', tasks: @tasks %>
 <% end %>
-<% if @done_tasks.any? %>
-  <h3>完了済みのタスク</h3>
-  <%= render 'tasks', tasks: @done_tasks %>
-<% end %>
+
 
 <%= link_to '新規タスクの投稿', new_task_path, class: "btn btn-primary" %>
 

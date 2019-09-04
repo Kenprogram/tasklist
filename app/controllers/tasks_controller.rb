@@ -5,10 +5,9 @@ class TasksController < ApplicationController
   
   def index
     if logged_in?
-      @tasks = current_user.tasks.where(status: "未完了").page(params[:page])
+      @tasks = current_user.tasks.all.page(params[:page])
       @task = current_user.tasks.build
-      @done_tasks = current_user.tasks.where(status: "完了").page(params[:page])
-      @done_task = current_user.tasks.build
+
     end
   end
 
